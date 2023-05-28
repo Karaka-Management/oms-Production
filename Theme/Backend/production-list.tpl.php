@@ -29,22 +29,22 @@ echo $this->getData('nav')->render(); ?>
     <div class="col-xs-12">
         <div class="box wf-100">
             <table class="default">
-                <caption><?= $this->getHtml('Productions') ?><i class="fa fa-download floatRight download btn"></i></caption>
+                <caption><?= $this->getHtml('Productions'); ?><i class="fa fa-download floatRight download btn"></i></caption>
                 <thead>
                 <tr>
-                    <td><?= $this->getHtml('Status') ?>
+                    <td><?= $this->getHtml('Status'); ?>
                     <td><?= $this->getHtml('ID', '0', '0'); ?>
                     <td><?= $this->getHtml('ID', '0', '0'); ?>
-                    <td class="wf-100"><?= $this->getHtml('Article') ?>
-                    <td><?= $this->getHtml('Quantity') ?>
-                    <td><?= $this->getHtml('Start') ?>
-                    <td><?= $this->getHtml('Due') ?>
-                    <td><?= $this->getHtml('Done') ?>
+                    <td class="wf-100"><?= $this->getHtml('Article'); ?>
+                    <td><?= $this->getHtml('Quantity'); ?>
+                    <td><?= $this->getHtml('Start'); ?>
+                    <td><?= $this->getHtml('Due'); ?>
+                    <td><?= $this->getHtml('Done'); ?>
                 <tfoot>
                 <tr><td colspan="8">
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
-                $url = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/profile?{?}&id=' . $value->getId()); ?>
+                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/profile?{?}&id=' . $value->getId()); ?>
                 <tr>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>
