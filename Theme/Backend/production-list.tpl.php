@@ -23,7 +23,7 @@ $footerView->setPages(25);
 $footerView->setPage(1);
 $footerView->setResults(1);
 
-echo $this->getData('nav')->render(); ?>
+echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
@@ -44,9 +44,9 @@ echo $this->getData('nav')->render(); ?>
                 <tr><td colspan="8">
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
-                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/profile?{?}&id=' . $value->getId()); ?>
+                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/profile?{?}&id=' . $value->id); ?>
                 <tr>
-                    <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getId()); ?></a>
+                    <td><a href="<?= $url; ?>"><?= $this->printHtml($value->id); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getParent()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()); ?></a>
