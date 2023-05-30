@@ -45,7 +45,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Production/Theme/Backend/production-list');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response);
 
         return $view;
     }
@@ -66,7 +66,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Production/Theme/Backend/production-create');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response);
 
         return $view;
     }
@@ -87,7 +87,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Production/Theme/Backend/process-list');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1003001001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003001001, $request, $response);
 
         return $view;
     }
@@ -108,7 +108,7 @@ final class BackendController extends Controller
     {
         $view = new View($this->app->l11nManager, $request, $response);
         $view->setTemplate('/Modules/Production/Theme/Backend/process-create');
-        $view->addData('nav', $this->app->moduleManager->get('Navigation')->createNavigationMid(1003001001, $request, $response));
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003001001, $request, $response);
 
         return $view;
     }
