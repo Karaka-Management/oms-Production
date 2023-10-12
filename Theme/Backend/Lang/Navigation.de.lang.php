@@ -13,7 +13,7 @@
 declare(strict_types=1);
 
 return ['Navigation' => [
-    'Articles'   => '',
-    'Process'    => '',
-    'Production' => '',
+    'Articles'   => 'Artikel',
+    'Process'    => 'Prozess',
+    'Production' => 'Produktion',
 ]];
