@@ -44,7 +44,7 @@ echo $this->data['nav']->render(); ?>
                 <tr><td colspan="8">
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
-                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/profile?{?}&id=' . $value->id); ?>
+                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/view?{?}&id=' . $value->id); ?>
                 <tr>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->id); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>
