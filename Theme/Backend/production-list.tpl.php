@@ -27,9 +27,10 @@ echo $this->data['nav']->render(); ?>
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="box wf-100">
+        <section class="portlet">
+            <div class="portlet-head"><?= $this->getHtml('Productions'); ?><i class="g-icon download btn end-xs">download</i></div>
+            <div class="slider">
             <table class="default sticky">
-                <caption><?= $this->getHtml('Productions'); ?><i class="g-icon end-xs download btn">download</i></caption>
                 <thead>
                 <tr>
                     <td><?= $this->getHtml('Status'); ?>
@@ -40,8 +41,6 @@ echo $this->data['nav']->render(); ?>
                     <td><?= $this->getHtml('Start'); ?>
                     <td><?= $this->getHtml('Due'); ?>
                     <td><?= $this->getHtml('Done'); ?>
-                <tfoot>
-                <tr><td colspan="8">
                 <tbody>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
                 $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/view?{?}&id=' . $value->id); ?>
@@ -56,6 +55,7 @@ echo $this->data['nav']->render(); ?>
                     <td colspan="8" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
                         <?php endif; ?>
             </table>
+        </div>
         </div>
     </div>
 </div>
