@@ -29,4 +29,6 @@ abstract class PermissionState extends Enum
     public const PRODUCTION = 1;
 
     public const PROCESS = 2;
+
+    public const MACHINE = 3;
 }

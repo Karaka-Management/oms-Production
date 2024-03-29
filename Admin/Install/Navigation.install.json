@@ -58,6 +58,52 @@
                         "children": []
                     }
                 ]
+            },
+            {
+                "id": 1004304001,
+                "pid": "/",
+                "type": 2,
+                "subtype": 1,
+                "name": "Machines",
+                "uri": "{/base}/production/machine/list?{?}",
+                "target": "self",
+                "icon": null,
+                "order": 5,
+                "from": "Production",
+                "permission": { "permission": 2, "type": null, "element": null },
+                "parent": 1004301001,
+                "children": [
+                    {
+                        "id": 1004304101,
+                        "pid": "/production",
+                        "type": 3,
+                        "subtype": 1,
+                        "name": "List",
+                        "uri": "{/base}/production/machine/list?{?}",
+                        "target": "self",
+                        "icon": null,
+                        "order": 5,
+                        "from": "Production",
+                        "permission": { "permission": 2, "type": null, "element": null },
+                        "parent": 1004304001,
+                        "children": []
+                    },
+                    {
+                        "id": 1004304201,
+                        "pid": "/production",
+                        "type": 3,
+                        "subtype": 1,
+                        "name": "Create",
+                        "uri": "{/base}/production/machine/create?{?}",
+                        "target": "self",
+                        "icon": null,
+                        "order": 10,
+                        "from": "Production",
+                        "permission": { "permission": 4, "type": null, "element": null },
+                        "parent": 1004304001,
+                        "children": []
+                    }
+                ]
             }
         ]
     }

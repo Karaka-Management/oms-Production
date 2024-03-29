@@ -50,4 +50,37 @@ return [
             ],
         ],
     ],
+    '^.*/production/machine/list(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineList',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionState::MACHINE,
+            ],
+        ],
+    ],
+    '^.*/production/machine/create(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionState::MACHINE,
+            ],
+        ],
+    ],
+    '^.*/production/machine/view(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
+            'verb'       => RouteVerb::GET,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionState::MACHINE,
+            ],
+        ],
+    ],
 ];

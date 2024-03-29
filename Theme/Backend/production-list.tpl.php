@@ -45,7 +45,7 @@ echo $this->data['nav']->render(); ?>
                 <?php $c = 0; foreach ([] as $key => $value) : ++$c;
                 $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/view?{?}&id=' . $value->id); ?>
                 <tr>
-                    <td><a href="<?= $url; ?>"><?= $this->printHtml($value->id); ?></a>
+                    <td><a href="<?= $url; ?>"><?= $value->id; ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getParent()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()); ?></a>
