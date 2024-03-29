@@ -6,7 +6,7 @@ use phpOMS\Account\PermissionType;
 use phpOMS\Router\RouteVerb;
 
 return [
-    '^.*/production/list(\?.*$|$)' => [
+    '^/production/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionList',
             'verb'       => RouteVerb::GET,
@@ -17,7 +17,7 @@ return [
             ],
         ],
     ],
-    '^.*/production/create(\?.*$|$)' => [
+    '^/production/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionCreate',
             'verb'       => RouteVerb::GET,
@@ -28,7 +28,7 @@ return [
             ],
         ],
     ],
-    '^.*/production/process/list(\?.*$|$)' => [
+    '^/production/process/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionProcessList',
             'verb'       => RouteVerb::GET,
@@ -39,7 +39,7 @@ return [
             ],
         ],
     ],
-    '^.*/production/process/create(\?.*$|$)' => [
+    '^/production/process/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionProcessCreate',
             'verb'       => RouteVerb::GET,
@@ -50,7 +50,7 @@ return [
             ],
         ],
     ],
-    '^.*/production/machine/list(\?.*$|$)' => [
+    '^/production/machine/list(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineList',
             'verb'       => RouteVerb::GET,
@@ -61,7 +61,7 @@ return [
             ],
         ],
     ],
-    '^.*/production/machine/create(\?.*$|$)' => [
+    '^/production/machine/create(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
             'verb'       => RouteVerb::GET,
@@ -72,7 +72,7 @@ return [
             ],
         ],
     ],
-    '^.*/production/machine/view(\?.*$|$)' => [
+    '^/production/machine/view(\?.*$|$)' => [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
             'verb'       => RouteVerb::GET,
