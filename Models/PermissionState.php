@@ -31,5 +31,4 @@ abstract class PermissionState extends Enum
     public const RECIPE = 2;
 
     public const MACHINE = 3;
-
 }
