@@ -10,6 +10,7 @@ return [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionList',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -21,6 +22,7 @@ return [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionCreate',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::CREATE,
@@ -28,25 +30,15 @@ return [
             ],
         ],
     ],
-    '^/production/process/list(\?.*$|$)' => [
+    '^/production/view(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionProcessList',
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionView',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
-                'state'  => PermissionState::PROCESS,
-            ],
-        ],
-    ],
-    '^/production/process/create(\?.*$|$)' => [
-        [
-            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionProcessCreate',
-            'verb'       => RouteVerb::GET,
-            'permission' => [
-                'module' => BackendController::MODULE_NAME,
-                'type'   => PermissionType::CREATE,
-                'state'  => PermissionState::PROCESS,
+                'state'  => PermissionState::PRODUCTION,
             ],
         ],
     ],
@@ -54,6 +46,7 @@ return [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineList',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::READ,
@@ -65,6 +58,7 @@ return [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::CREATE,
@@ -76,10 +70,47 @@ return [
         [
             'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
             'verb'       => RouteVerb::GET,
+            'active' => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
                 'type'   => PermissionType::CREATE,
                 'state'  => PermissionState::MACHINE,
+            ],
+        ],
+    ],
+    '^/production/recipe/list(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineList',
+            'verb'       => RouteVerb::GET,
+            'active' => true,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::READ,
+                'state'  => PermissionState::RECIPE,
+            ],
+        ],
+    ],
+    '^/production/recipe/create(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
+            'verb'       => RouteVerb::GET,
+            'active' => true,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionState::RECIPE,
+            ],
+        ],
+    ],
+    '^/production/recipe/view(\?.*$|$)' => [
+        [
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
+            'verb'       => RouteVerb::GET,
+            'active' => true,
+            'permission' => [
+                'module' => BackendController::MODULE_NAME,
+                'type'   => PermissionType::CREATE,
+                'state'  => PermissionState::RECIPE,
             ],
         ],
     ],

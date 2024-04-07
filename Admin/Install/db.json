@@ -1,0 +1,240 @@
+{
+    "production_machine": {
+        "name": "production_machine",
+        "fields": {
+            "production_machine_id": {
+                "name": "production_machine_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "production_machine_capacity": {
+                "name": "production_machine_capacity",
+                "type": "BIGINT",
+                "null": false
+            },
+            "production_machine_unit": {
+                "name": "production_machine_unit",
+                "type": "VARCHAR(16)",
+                "null": false
+            },
+            "production_machine_equipment": {
+                "name": "production_machine_equipment",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "equipmgmt_equipment",
+                "foreignKey": "equipmgmt_equipment_id"
+            }
+        }
+    },
+    "production_machine_item": {
+        "name": "production_machine_item",
+        "fields": {
+            "production_machine_item_id": {
+                "name": "production_machine_item_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "production_machine_item_capacity": {
+                "name": "production_machine_item_capacity",
+                "type": "BIGINT",
+                "null": false
+            },
+            "production_machine_item_item": {
+                "name": "production_machine_item_item",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "itemmgmt_item",
+                "foreignKey": "itemmgmt_item_id"
+            },
+            "production_machine_item_machine": {
+                "name": "production_machine_item_machine",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "production_machine",
+                "foreignKey": "production_machine_id"
+            }
+        }
+    },
+    "production_recipe": {
+        "name": "production_recipe",
+        "fields": {
+            "production_recipe_id": {
+                "name": "production_recipe_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "production_recipe_status": {
+                "name": "production_recipe_status",
+                "type": "TINYINT",
+                "null": false
+            },
+            "production_recipe_quantity": {
+                "description": "Base quantity the recipe is based on",
+                "name": "production_recipe_quantity",
+                "type": "BIGINT",
+                "null": false
+            },
+            "production_recipe_item": {
+                "name": "production_recipe_item",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "itemmgmt_item",
+                "foreignKey": "itemmgmt_item_id"
+            }
+        }
+    },
+    "production_recipe_media": {
+        "name": "production_recipe_media",
+        "fields": {
+            "production_recipe_media_id": {
+                "name": "production_recipe_media_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "production_recipe_media_file": {
+                "name": "production_recipe_media_file",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "media",
+                "foreignKey": "media_id"
+            },
+            "production_recipe_media_recipe": {
+                "name": "production_recipe_media_recipe",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "production_recipe",
+                "foreignKey": "production_recipe_id"
+            }
+        }
+    },
+    "production_recipe_step": {
+        "name": "production_recipe_step",
+        "fields": {
+            "production_recipe_step_id": {
+                "name": "production_recipe_step_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "production_recipe_step_description": {
+                "name": "production_recipe_step_description",
+                "type": "TEXT",
+                "null": false
+            },
+            "production_recipe_step_order": {
+                "name": "production_recipe_step_order",
+                "type": "INT",
+                "null": false
+            },
+            "production_recipe_step_people": {
+                "description": "Amount of people performing this step",
+                "name": "production_recipe_step_people",
+                "type": "INT",
+                "null": false
+            },
+            "production_recipe_step_position": {
+                "description": "Which people group performs this step. Important to calculate costs and responsibilities",
+                "name": "production_recipe_step_position",
+                "type": "INT",
+                "null": false,
+                "foreignTable": "organization_position",
+                "foreignKey": "organization_position_id"
+            },
+            "production_recipe_step_duration": {
+                "description": "Real duration it takes to finish",
+                "name": "production_recipe_step_duration",
+                "type": "BIGINT",
+                "null": false
+            },
+            "production_recipe_step_additiveduration": {
+                "description": "Duration if no parallel work is performed. E.g. multiple people perform this step.",
+                "name": "production_recipe_step_additiveduration",
+                "type": "BIGINT",
+                "null": false
+            },
+            "production_recipe_step_scalable": {
+                "description": "Scales linear with item quantity, jumps with machine usage, no scaling",
+                "name": "production_recipe_step_scalable",
+                "type": "TINYINT",
+                "null": false
+            }
+        }
+    },
+    "production_recipe_step_item": {
+        "name": "production_recipe_step_item",
+        "fields": {
+            "production_recipe_step_item_id": {
+                "name": "production_recipe_step_item_id",
+                "type": "INT",
+                "null": false,
+                "primary": true,
+                "autoincrement": true
+            },
+            "production_recipe_step_item_quantity": {
+                "name": "production_recipe_step_item_quantity",
+                "type": "BIGINT",
+                "null": false
+            },
+            "production_recipe_step_item_item": {
+                "name": "production_recipe_step_item_item",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "itemmgmt_item",
+                "foreignKey": "itemmgmt_item_id"
+            },
+            "production_recipe_step_item_step": {
+                "name": "production_recipe_step_item_step",
+                "type": "INT(11)",
+                "null": false,
+                "foreignTable": "production_recipe_step",
+                "foreignKey": "production_recipe_step_id"
+            }
+        },
+        "production_recipe_step_machine": {
+            "name": "production_recipe_step_machine",
+            "fields": {
+                "production_recipe_step_machine_id": {
+                    "name": "production_recipe_step_machine_id",
+                    "type": "INT",
+                    "null": false,
+                    "primary": true,
+                    "autoincrement": true
+                },
+                "production_recipe_step_machine_settings": {
+                    "name": "production_recipe_step_machine_settings",
+                    "type": "TEXT",
+                    "null": false
+                },
+                "production_recipe_step_machine_alt": {
+                    "description": "Is alternative machine",
+                    "name": "production_recipe_step_machine_alt",
+                    "type": "TINYINT(1)",
+                    "null": false
+                },
+                "production_recipe_step_machine_machine": {
+                    "name": "production_recipe_step_machine_machine",
+                    "type": "INT(11)",
+                    "null": false,
+                    "foreignTable": "production_machine",
+                    "foreignKey": "production_machine_id"
+                },
+                "production_recipe_step_machine_step": {
+                    "name": "production_recipe_step_machine_step",
+                    "type": "INT(11)",
+                    "null": false,
+                    "foreignTable": "production_recipe_step",
+                    "foreignKey": "production_recipe_step_id"
+                }
+            }
+        }
+    }
+}

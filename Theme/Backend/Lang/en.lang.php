@@ -13,7 +13,6 @@
 declare(strict_types=1);
 
 return ['Production' => [
-    'Article'     => 'Article',
     'Done'        => 'Done',
     'Due'         => 'Due',
     'For'         => 'For',

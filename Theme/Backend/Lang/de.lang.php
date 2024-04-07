@@ -13,17 +13,16 @@
 declare(strict_types=1);
 
 return ['Production' => [
-    'Article'     => '',
-    'Done'        => '',
-    'Due'         => '',
-    'For'         => '',
+    'Done'        => 'Fertig',
+    'Due'         => 'Fällig',
+    'For'         => 'Für',
     'Name'        => 'Name',
-    'Ordered'     => '',
-    'Orderer'     => '',
-    'Process'     => '',
-    'Product'     => '',
-    'Productions' => '',
-    'Quantity'    => '',
+    'Ordered'     => 'Bestellt',
+    'Orderer'     => 'Besteller',
+    'Process'     => 'Prozess',
+    'Product'     => 'Product',
+    'Productions' => 'Produktionen',
+    'Quantity'    => 'Menge',
     'Start'       => 'Start',
-    'Status'      => '',
+    'Status'      => 'Status',
 ]];

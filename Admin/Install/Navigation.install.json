@@ -60,7 +60,53 @@
                 ]
             },
             {
-                "id": 1004304001,
+                "id": 1004305001,
+                "pid": "/",
+                "type": 2,
+                "subtype": 1,
+                "name": "Recipes",
+                "uri": "{/base}/production/recipe/list?{?}",
+                "target": "self",
+                "icon": null,
+                "order": 10,
+                "from": "Production",
+                "permission": { "permission": 2, "type": null, "element": null },
+                "parent": 1004301001,
+                "children": [
+                    {
+                        "id": 1004305101,
+                        "pid": "/production",
+                        "type": 3,
+                        "subtype": 1,
+                        "name": "List",
+                        "uri": "{/base}/production/recipe/list?{?}",
+                        "target": "self",
+                        "icon": null,
+                        "order": 5,
+                        "from": "Production",
+                        "permission": { "permission": 2, "type": null, "element": null },
+                        "parent": 1004305001,
+                        "children": []
+                    },
+                    {
+                        "id": 1004305201,
+                        "pid": "/production",
+                        "type": 3,
+                        "subtype": 1,
+                        "name": "Create",
+                        "uri": "{/base}/production/recipe/create?{?}",
+                        "target": "self",
+                        "icon": null,
+                        "order": 10,
+                        "from": "Production",
+                        "permission": { "permission": 4, "type": null, "element": null },
+                        "parent": 1004305001,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "id": 1004306001,
                 "pid": "/",
                 "type": 2,
                 "subtype": 1,
@@ -68,13 +114,13 @@
                 "uri": "{/base}/production/machine/list?{?}",
                 "target": "self",
                 "icon": null,
-                "order": 5,
+                "order": 15,
                 "from": "Production",
                 "permission": { "permission": 2, "type": null, "element": null },
                 "parent": 1004301001,
                 "children": [
                     {
-                        "id": 1004304101,
+                        "id": 1004306101,
                         "pid": "/production",
                         "type": 3,
                         "subtype": 1,
@@ -85,11 +131,11 @@
                         "order": 5,
                         "from": "Production",
                         "permission": { "permission": 2, "type": null, "element": null },
-                        "parent": 1004304001,
+                        "parent": 1004306001,
                         "children": []
                     },
                     {
-                        "id": 1004304201,
+                        "id": 1004306201,
                         "pid": "/production",
                         "type": 3,
                         "subtype": 1,
@@ -100,7 +146,7 @@
                         "order": 10,
                         "from": "Production",
                         "permission": { "permission": 4, "type": null, "element": null },
-                        "parent": 1004304001,
+                        "parent": 1004306001,
                         "children": []
                     }
                 ]
