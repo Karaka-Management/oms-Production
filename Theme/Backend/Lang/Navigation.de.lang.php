@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 return ['Navigation' => [
     'Articles'   => 'Artikel',
-    'Process'    => 'Prozess',
+    'Recipes'    => 'Anleitungen',
     'Production' => 'Produktion',
     'Machines'   => 'Maschinen',
     'List'       => 'Liste',
