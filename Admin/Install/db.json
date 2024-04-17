@@ -12,12 +12,21 @@
             "production_machine_capacity": {
                 "name": "production_machine_capacity",
                 "type": "BIGINT",
+                "null": true,
+                "default": null
+            },
+            "production_machine_unitmeasure": {
+                "name": "production_machine_unitmeasure",
+                "type": "VARCHAR(16)",
                 "null": false
             },
             "production_machine_unit": {
                 "name": "production_machine_unit",
-                "type": "VARCHAR(16)",
-                "null": false
+                "type": "INT",
+                "null": true,
+                "default": null,
+                "foreignTable": "unit",
+                "foreignKey": "unit_id"
             },
             "production_machine_equipment": {
                 "name": "production_machine_equipment",

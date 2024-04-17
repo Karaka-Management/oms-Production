@@ -68,19 +68,19 @@ return [
     ],
     '^/production/machine/view(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineView',
             'verb'       => RouteVerb::GET,
             'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
-                'type'   => PermissionType::CREATE,
+                'type'   => PermissionType::READ,
                 'state'  => PermissionState::MACHINE,
             ],
         ],
     ],
     '^/production/recipe/list(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineList',
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionRecipeList',
             'verb'       => RouteVerb::GET,
             'active'     => true,
             'permission' => [
@@ -92,7 +92,7 @@ return [
     ],
     '^/production/recipe/create(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionRecipeCreate',
             'verb'       => RouteVerb::GET,
             'active'     => true,
             'permission' => [
@@ -104,12 +104,12 @@ return [
     ],
     '^/production/recipe/view(\?.*$|$)' => [
         [
-            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionMachineCreate',
+            'dest'       => '\Modules\Production\Controller\BackendController:viewProductionRecipeView',
             'verb'       => RouteVerb::GET,
             'active'     => true,
             'permission' => [
                 'module' => BackendController::MODULE_NAME,
-                'type'   => PermissionType::CREATE,
+                'type'   => PermissionType::READ,
                 'state'  => PermissionState::RECIPE,
             ],
         ],

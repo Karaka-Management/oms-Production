@@ -16,13 +16,6 @@ declare(strict_types=1);
  * @var \phpOMS\Views\View $this
  */
 
-$footerView = new \phpOMS\Views\PaginationView($this->l11nManager, $this->request, $this->response);
-$footerView->setTemplate('/Web/Templates/Lists/Footer/PaginationBig');
-
-$footerView->setPages(25);
-$footerView->setPage(1);
-$footerView->setResults(1);
-
 echo $this->data['nav']->render(); ?>
 
 <div class="row">
@@ -35,25 +28,25 @@ echo $this->data['nav']->render(); ?>
                 <tr>
                     <td><?= $this->getHtml('Status'); ?>
                     <td><?= $this->getHtml('ID', '0', '0'); ?>
-                    <td><?= $this->getHtml('ID', '0', '0'); ?>
                     <td class="wf-100"><?= $this->getHtml('Article'); ?>
                     <td><?= $this->getHtml('Quantity'); ?>
                     <td><?= $this->getHtml('Start'); ?>
                     <td><?= $this->getHtml('Due'); ?>
                     <td><?= $this->getHtml('Done'); ?>
                 <tbody>
-                <?php $c = 0; foreach ([] as $key => $value) : ++$c;
-                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}business/department/view?{?}&id=' . $value->id); ?>
+                <?php $c = 0;
+                foreach ([] as $key => $value) : ++$c;
+                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}/production/machine/view?{?}&id=' . $value->id); ?>
                 <tr>
                     <td><a href="<?= $url; ?>"><?= $value->id; ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getParent()); ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getUnit()); ?></a>
-                        <?php endforeach; ?>
-                        <?php if ($c === 0) : ?>
+                <?php endforeach; ?>
+                <?php if ($c === 0) : ?>
                 <tr>
                     <td colspan="8" class="empty"><?= $this->getHtml('Empty', '0', '0'); ?>
-                        <?php endif; ?>
+                <?php endif; ?>
             </table>
         </div>
         </div>

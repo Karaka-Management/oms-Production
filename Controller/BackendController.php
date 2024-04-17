@@ -14,6 +14,7 @@ declare(strict_types=1);
 
 namespace Modules\Production\Controller;
 
+use Modules\Production\Models\MachineMapper;
 use phpOMS\Contract\RenderableInterface;
 use phpOMS\Message\RequestAbstract;
 use phpOMS\Message\ResponseAbstract;
@@ -68,6 +69,57 @@ final class BackendController extends Controller
         $view->setTemplate('/Modules/Production/Theme/Backend/machine-list');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response);
 
+        $view->data['machines'] = MachineMapper::getAll()
+            ->with('equipment')
+            ->executeGetArray();
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewProductionMachineView(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Production/Theme/Backend/machine-view');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response);
+
+        $view->data['machine'] = MachineMapper::get()
+            ->with('equipment')
+            ->where('id', (int) $request->getData('id'))
+            ->execute();
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewProductionMachineCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Production/Theme/Backend/machine-view');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response);
+
         return $view;
     }
 
@@ -86,7 +138,7 @@ final class BackendController extends Controller
     public function viewProductionCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/Production/Theme/Backend/production-create');
+        $view->setTemplate('/Modules/Production/Theme/Backend/production-view');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response);
 
         return $view;
