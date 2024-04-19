@@ -42,7 +42,6 @@ final class MachineMapper extends DataMapperFactory
         'production_machine_equipment'        => ['name' => 'production_machine_equipment',      'type' => 'int',   'internal' => 'equipment'],
         'production_machine_unitmeasure'        => ['name' => 'production_machine_unitmeasure',      'type' => 'string',   'internal' => 'unitOfMeasure'],
         'production_machine_unit'        => ['name' => 'production_machine_unit',      'type' => 'int',   'internal' => 'unit'],
-        'production_machine_created_at'  => ['name' => 'production_machine_created_at', 'type' => 'DateTimeImmutable', 'internal' => 'createdAt', 'readonly' => true],
     ];
 
     /**
@@ -65,14 +64,6 @@ final class MachineMapper extends DataMapperFactory
      * @since 1.0.0
      */
     public const TABLE = 'production_machine';
-
-    /**
-     * Created at.
-     *
-     * @var string
-     * @since 1.0.0
-     */
-    public const CREATED_AT = 'production_machine_created_at';
 
     /**
      * Primary field name.

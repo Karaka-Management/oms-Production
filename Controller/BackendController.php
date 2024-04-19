@@ -156,10 +156,31 @@ final class BackendController extends Controller
      * @since 1.0.0
      * @codeCoverageIgnore
      */
-    public function viewProductionProcessList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewProductionView(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/Production/Theme/Backend/process-list');
+        $view->setTemplate('/Modules/Production/Theme/Backend/production-view');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1004303001, $request, $response);
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewProductionRecipeList(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Production/Theme/Backend/recipe-list');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003001001, $request, $response);
 
         return $view;
@@ -177,10 +198,31 @@ final class BackendController extends Controller
      * @since 1.0.0
      * @codeCoverageIgnore
      */
-    public function viewProductionProcessCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    public function viewProductionRecipeCreate(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
     {
         $view = new View($this->app->l11nManager, $request, $response);
-        $view->setTemplate('/Modules/Production/Theme/Backend/process-create');
+        $view->setTemplate('/Modules/Production/Theme/Backend/recipe-create');
+        $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003001001, $request, $response);
+
+        return $view;
+    }
+
+    /**
+     * Routing end-point for application behavior.
+     *
+     * @param RequestAbstract  $request  Request
+     * @param ResponseAbstract $response Response
+     * @param array            $data     Generic data
+     *
+     * @return RenderableInterface
+     *
+     * @since 1.0.0
+     * @codeCoverageIgnore
+     */
+    public function viewProductionRecipeView(RequestAbstract $request, ResponseAbstract $response, $data = null) : RenderableInterface
+    {
+        $view = new View($this->app->l11nManager, $request, $response);
+        $view->setTemplate('/Modules/Production/Theme/Backend/recipe-view');
         $view->data['nav'] = $this->app->moduleManager->get('Navigation')->createNavigationMid(1003001001, $request, $response);
 
         return $view;
