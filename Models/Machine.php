@@ -38,6 +38,11 @@ class Machine
 
     public int $unit = 0;
 
+    /**
+     * Constructor.
+     *
+     * @since 1.0.0
+     */
     public function __construct()
     {
         $this->equipment = new NullEquipment();
