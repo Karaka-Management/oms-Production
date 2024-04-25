@@ -18,7 +18,6 @@ return ['Production' => [
     'For'         => 'For',
     'Name'        => 'Name',
     'Items'        => 'Items',
-    'Item'        => 'Item',
     'Ordered'     => 'Ordered',
     'Orderer'     => 'Orderer',
     'Process'     => 'Process',
