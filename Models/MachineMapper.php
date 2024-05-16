@@ -38,9 +38,9 @@ final class MachineMapper extends DataMapperFactory
      */
     public const COLUMNS = [
         'production_machine_id'          => ['name' => 'production_machine_id',         'type' => 'int',      'internal' => 'id'],
-        'production_machine_capacity'        => ['name' => 'production_machine_capacity',      'type' => 'int',   'internal' => 'capacity'],
-        'production_machine_equipment'        => ['name' => 'production_machine_equipment',      'type' => 'int',   'internal' => 'equipment'],
-        'production_machine_unitmeasure'        => ['name' => 'production_machine_unitmeasure',      'type' => 'string',   'internal' => 'unitOfMeasure'],
+        'production_machine_capacity'    => ['name' => 'production_machine_capacity',      'type' => 'int',   'internal' => 'capacity'],
+        'production_machine_equipment'   => ['name' => 'production_machine_equipment',      'type' => 'int',   'internal' => 'equipment'],
+        'production_machine_unitmeasure' => ['name' => 'production_machine_unitmeasure',      'type' => 'string',   'internal' => 'unitOfMeasure'],
         'production_machine_unit'        => ['name' => 'production_machine_unit',      'type' => 'int',   'internal' => 'unit'],
     ];
 

@@ -16,10 +16,10 @@ use Modules\Production\Models\NullProduction;
 use phpOMS\Uri\UriFactory;
 
 /**
- * @var \phpOMS\Views\View               $this
+ * @var \phpOMS\Views\View $this
  */
 $production = $this->data['production'] ?? new NullProduction();
-$isNew = $production->id === 0;
+$isNew      = $production->id === 0;
 
 echo $this->data['nav']->render(); ?>
 <div class="tabview tab-2">

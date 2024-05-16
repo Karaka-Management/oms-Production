@@ -84,7 +84,7 @@
                 "null": false
             },
             "production_recipe_quantity": {
-                "description": "Base quantity the recipe is based on",
+                "comment": "Base quantity the recipe is based on",
                 "name": "production_recipe_quantity",
                 "type": "BIGINT",
                 "null": false
@@ -145,13 +145,13 @@
                 "null": false
             },
             "production_recipe_step_people": {
-                "description": "Amount of people performing this step",
+                "comment": "Amount of people performing this step",
                 "name": "production_recipe_step_people",
                 "type": "INT",
                 "null": false
             },
             "production_recipe_step_position": {
-                "description": "Which people group performs this step. Important to calculate costs and responsibilities",
+                "comment": "Which people group performs this step. Important to calculate costs and responsibilities",
                 "name": "production_recipe_step_position",
                 "type": "INT",
                 "null": false,
@@ -159,19 +159,19 @@
                 "foreignKey": "organization_position_id"
             },
             "production_recipe_step_duration": {
-                "description": "Real duration it takes to finish",
+                "comment": "Real duration it takes to finish",
                 "name": "production_recipe_step_duration",
                 "type": "BIGINT",
                 "null": false
             },
             "production_recipe_step_additiveduration": {
-                "description": "Duration if no parallel work is performed. E.g. multiple people perform this step.",
+                "comment": "Duration if no parallel work is performed. E.g. multiple people perform this step.",
                 "name": "production_recipe_step_additiveduration",
                 "type": "BIGINT",
                 "null": false
             },
             "production_recipe_step_scalable": {
-                "description": "Scales linear with item quantity, jumps with machine usage, no scaling",
+                "comment": "Scales linear with item quantity, jumps with machine usage, no scaling",
                 "name": "production_recipe_step_scalable",
                 "type": "TINYINT",
                 "null": false
@@ -224,7 +224,7 @@
                     "null": false
                 },
                 "production_recipe_step_machine_alt": {
-                    "description": "Is alternative machine",
+                    "comment": "Is alternative machine",
                     "name": "production_recipe_step_machine_alt",
                     "type": "TINYINT(1)",
                     "null": false

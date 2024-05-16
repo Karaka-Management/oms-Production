@@ -22,7 +22,7 @@ use phpOMS\Uri\UriFactory;
  */
 $machine      = $this->data['machine'] ?? new NullMachine();
 $machineImage = $this->data['machineImage'] ?? new NullMedia();
-$isNew = $machine->id === 0;
+$isNew        = $machine->id === 0;
 
 $equipmentStatus = EquipmentStatus::getConstants();
 

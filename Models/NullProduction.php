@@ -24,5 +24,4 @@ namespace Modules\Production\Models;
  */
 class NullProduction extends Production
 {
-
 }

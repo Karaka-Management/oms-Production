@@ -36,7 +36,7 @@ echo $this->data['nav']->render(); ?>
                 <tbody>
                 <?php $c = 0;
                 foreach ([] as $key => $value) : ++$c;
-                $url     = \phpOMS\Uri\UriFactory::build('{/prefix}/production/machine/view?{?}&id=' . $value->id); ?>
+                $url = \phpOMS\Uri\UriFactory::build('{/prefix}/production/machine/view?{?}&id=' . $value->id); ?>
                 <tr>
                     <td><a href="<?= $url; ?>"><?= $value->id; ?></a>
                     <td><a href="<?= $url; ?>"><?= $this->printHtml($value->getName()); ?></a>

@@ -54,6 +54,6 @@ class Production
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable('now');
-        $this->item = new NullItem();
+        $this->item      = new NullItem();
     }
 }
