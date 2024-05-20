@@ -6,7 +6,7 @@
  *
  * @package   Modules\Production\Models
  * @copyright Dennis Eichhorn
- * @license   OMS License 2.0
+ * @license   OMS License 2.2
  * @version   1.0.0
  * @link      https://jingga.app
  */
@@ -21,7 +21,7 @@ use phpOMS\DataStorage\Database\Mapper\DataMapperFactory;
  * Machine mapper class.
  *
  * @package Modules\Production\Models
- * @license OMS License 2.0
+ * @license OMS License 2.2
  * @link    https://jingga.app
  * @since   1.0.0
  *
